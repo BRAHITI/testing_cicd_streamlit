@@ -9,21 +9,16 @@ def multiplication_numbers(a, b):
 
 def soustraction_numbers(a, b):
     return a - b
-"""
-def div_numbers(a, b):
-    try :
-        c=a/b
-        return c
-    except :
-        print("Veuillez mettre les bons nombres !")
 
-"""
+def division_numbers(a, b):
+    return a/b
+
 
 def main():
-    st.title("Calculatrice App")
+    st.title("Bonjour Mme Alessia BRAHITI, j'ai créé une Calculatrice pour toi")
     x = st.number_input("Entrez un nombre", key="x")
     y = st.number_input("Entrez un deuxième nombre", key="y")
-    operation=st.selectbox("Choisissez une opérations arithmétique : ",["Addition","Soustraction","Multiplication","Division"])
+    operation=st.selectbox("Choisissez une opération arithmétique : ",["Addition","Soustraction","Multiplication","Division"])
     
     if st.button("Calculer"):
         if operation=="Addition":
@@ -32,8 +27,13 @@ def main():
             st.write("Résultat:", soustraction_numbers(x, y))  
         elif operation=="Multiplication":
             st.write("Résultat:", multiplication_numbers(x, y))
+        elif operation=="Division":
+            if y==0:
+                st.write("Division par 0 n'est pas possible ! ")
+            else:
+                st.write("Résultat:", division_numbers(x, y))
         else: 
-            print('Je ne sais pas faire ce calcul ! ')
+            st.write("Merci de choisir une opération")
 
 
 
