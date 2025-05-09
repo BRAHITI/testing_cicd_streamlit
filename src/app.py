@@ -18,12 +18,15 @@ def int_divide_numbers(a, b):
 
     return a // b
 
+def modulo(a,b):
+    return a % b
+
 
 def main():
     st.title("Bonjour Mme Alessia BRAHITI, j'ai créé une Calculatrice pour toi")
     x = st.number_input("Entrez un nombre", key="x")
     y = st.number_input("Entrez un deuxième nombre", key="y")
-    operation=st.selectbox("Choisissez une opération arithmétique : ",["Addition","Soustraction","Multiplication","Division","Division-Entiere"])
+    operation=st.selectbox("Choisissez une opération arithmétique : ",["Addition","Soustraction","Multiplication","Division","Division-Entiere","Modulo"])
     
     if st.button("Calculer"):
         if operation=="Addition":
@@ -42,7 +45,11 @@ def main():
                 st.write("Division par 0 n'est pas possible ! ")
             else:
                 st.write("Résultat:", int_divide_numbers(x, y))
-
+        elif operation=="Modulo":
+            if y==0:
+                st.write("Erreur : division par zéro n'est pas possible ! ")
+            else:
+                st.write("Résultat:", modulo(x, y))
         else: 
             st.write("Merci de choisir une opération")
 
