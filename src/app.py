@@ -15,10 +15,9 @@ def division_numbers(a, b):
 
 
 def int_divide_numbers(a, b):
-
     return a // b
 
-def modulo(a,b):
+def modulo_numbers(a,b):
     return a % b
 
 
@@ -49,7 +48,7 @@ def main():
             if y==0:
                 st.write("Erreur : division par zéro n'est pas possible ! ")
             else:
-                st.write("Résultat:", modulo(x, y))
+                st.write("Résultat:", modulo_numbers(x, y))
         else: 
             st.write("Merci de choisir une opération")
 
